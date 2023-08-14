@@ -8,15 +8,15 @@ pipeline {
                 sh 'npm i'
             }
         }
-        stage('build') {
+        stage('bulid') {
             steps {
                 sh 'npm run build'
             }
-        stage('tes') {
+        }
+        stage('test') {
             steps {
                 sh 'npm run test'
             }
         }
     }
-}
 }
