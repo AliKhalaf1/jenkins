@@ -1,6 +1,10 @@
 pipeline {
      agent  any
 
+    environment {
+            USER_CREDENTIALS = credentials('docker_hub_account')
+      } 
+
     stages {
 
  
@@ -33,6 +37,14 @@ pipeline {
                 sh 'docker build -t nodeapp:latest .'
             }
         }
+        stage('pushing') {
+            steps {
+                sh "echo ${USER_CREDENTIALS_USR}"
+                sh "echo ${USER_CREDENTIALS_PSW}"
+                sh "docker login -u ${USER_CREDENTIALS_USR} -p ${USER_CREDENTIALS_PSW}"
+                sh 'docker push nodeapp:latest  '
+            }
+        }        
 
         } 
     }
