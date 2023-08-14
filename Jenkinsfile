@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+     agent {
+        docker { 
+            image 'node:lts-buster-slim'
+            args '-v /var/run/docker.sock:/var/run/docker.sock' 
+            args '-v /usr/bin/docker:/usr/bin/docker'
+             }
+    }
     stages {
         stage('install') {
             steps {
