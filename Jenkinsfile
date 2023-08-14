@@ -7,6 +7,11 @@ pipeline {
              }
     }
     stages {
+        stage('docker ') {
+            steps {
+                sh 'docker  ps'
+            }
+        }
         stage('install') {
             steps {
                 sh 'npm i'
