@@ -27,13 +27,12 @@ pipeline {
             steps {
                 sh 'npm run test'
             }
-
+        }
         stage('dockerbuild') {
             steps {
                 sh 'docker build -t nodeapp:latest .'
             }
         }
-        
+
         } 
     }
-}
