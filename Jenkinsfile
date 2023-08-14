@@ -42,7 +42,7 @@ pipeline {
                 sh "echo ${USER_CREDENTIALS_USR}"
                 sh "echo ${USER_CREDENTIALS_PSW}"
                 sh "docker login -u ${USER_CREDENTIALS_USR} -p ${USER_CREDENTIALS_PSW}"
-                sh 'docker push hossamalsankary/nodeappjana:${env.BUILD_ID}  '
+                sh "docker push hossamalsankary/nodeappjana:${env.BUILD_ID}  "
             }
         }        
 
