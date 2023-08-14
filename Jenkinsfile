@@ -7,6 +7,7 @@ pipeline {
              }
     }
     stages {
+        
         stage('dockerbuild') {
             steps {
                 sh 'docker build -t nodeapp:latest .'
