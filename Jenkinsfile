@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'node:lts-buster-slim' }
-    }
+    agent anay
     stages {
         stage('install') {
             steps {
