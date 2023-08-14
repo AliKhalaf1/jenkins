@@ -18,7 +18,7 @@ pipeline {
         } 
         stage('dockerbuild') {
             steps {
-                sh 'docker build -t node:lts-buster-slim'
+                sh 'docker build -t nodeapp:${env.BUILD_ID}'
             }
         }
     }
