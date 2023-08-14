@@ -7,11 +7,12 @@ pipeline {
              }
     }
     stages {
-        stage('docker ') {
+        stage('dockerbuild') {
             steps {
-                sh 'docker  ps'
+                sh 'docker build -t nodeapp:latest .'
             }
         }
+ 
         stage('install') {
             steps {
                 sh 'npm i'
@@ -27,10 +28,5 @@ pipeline {
                 sh 'npm run test'
             }
         } 
-        stage('dockerbuild') {
-            steps {
-                sh 'docker build -t nodeapp:latest .'
-            }
-        }
     }
 }
